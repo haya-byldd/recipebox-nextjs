@@ -1,4 +1,3 @@
-// import Image from "next/image";
 import { TiStarFullOutline } from "react-icons/ti";
 import { Recipe } from "../home/types";
 

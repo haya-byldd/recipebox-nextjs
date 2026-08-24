@@ -2,7 +2,6 @@ import About from "@/components/home/about";
 import Hero from "@/components/home/hero";
 import HomeRecipes from "@/components/home/home-recipes";
 import PopularCategories from "@/components/home/popular-categories";
-import Image from "next/image";
 
 export default function Home() {
   return (

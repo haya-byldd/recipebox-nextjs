@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const Hero = () => {
   return (
     <section className="bg-hero-bg px-6 py-15 text-center h-[calc(100vh-80px)] flex items-center">
@@ -14,7 +16,7 @@ const Hero = () => {
          <button className="mt-10 rounded-xl bg-orange px-7 py-3.5 font-semibold text-white shadow-sm transition hover:bg-orange-hover cursor-pointer duration-300 ease-out
     hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg
     active:translate-y-0 active:scale-[0.98]">
-          Explore Recipes
+        <Link href="#"> Explore Recipes</Link> 
         </button>
       </div>
     </section>

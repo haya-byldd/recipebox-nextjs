@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import RecipeCard from "../recipe/recipes-card";
+import RecipeCard from "../recipe/recipe-card";
 import { Recipe } from "./types";
 
 const HomeRecipes = () => {
