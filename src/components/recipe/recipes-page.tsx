@@ -3,11 +3,11 @@ import { use, useEffect, useState } from "react";
 import RecipeCard from "./recipe-card";
 import { Recipe } from "../home/types";
 
-const RecipesPage = () => {
+const Recipes = () => {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
   const [currentPage, setCurrentPage] = useState(1)
   const [totalRecipes, setTotalRecipes] = useState(0)
-  const limit = 12;
+  const limit = 9;
   const totalPages = Math.ceil(totalRecipes/limit);
   const skip = (currentPage - 1) * limit;
 
@@ -36,8 +36,9 @@ const RecipesPage = () => {
   }, [currentPage]);
   console.log(currentPage)
 
-  return (<>
-    <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 py-16 max-w-350 w-full">
+  return (
+  <div className="py-16 space-y-16">
+    <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md-lg-mid:grid-cols-3">
       {recipes.map((recipe) => {
         return <RecipeCard key={recipe.id} recipe={recipe} />;
       })}
@@ -47,7 +48,7 @@ const RecipesPage = () => {
         <span className="text-green-dark font-medium text-sm">{currentPage} of {totalPages} Pages </span>
         <button onClick={handleNextPage} className="w-25 py-2 px-4 border border-orange text-orange rounded-lg font-semibold sm:w-35 sm:px-8 cursor-pointer disabled:cursor-not-allowed disabled:opacity-50" disabled={currentPage === totalPages}>Next</button>
     </div>
-    </>
+    </div>
   );
 };
-export default RecipesPage;
+export default Recipes;

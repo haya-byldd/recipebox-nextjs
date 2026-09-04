@@ -5,4 +5,5 @@ image: string;
 rating: number;
 cuisine: string;
 difficulty: string;
+prepTimeMinutes: number;
 }

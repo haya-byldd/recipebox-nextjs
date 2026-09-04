@@ -4,8 +4,6 @@ import { useState } from "react";
 import RecipeBoxLogo from "./recipe-box-logo";
 import {
   RiCloseFill,
-  RiCloseLargeFill,
-  RiMenuFill,
   RiMenuLine,
 } from "react-icons/ri";
 
@@ -43,7 +41,7 @@ const Navbar = () => {
         >
           {isMenUOpen ? <RiCloseFill className="text-3xl" /> : <RiMenuLine />}
           {isMenUOpen && (
-            <nav className="flex flex-col max-w-50 w-full bg-orange-tint/50 p-4 text-base rounded-2xl  gap-5 absolute top-18.25 right-0">
+            <nav className="z-50 flex flex-col max-w-50 w-full font-medium bg-orange-tint p-4 text-base rounded-2xl  gap-5 absolute top-18.25 right-0">
               <Link href="#" className="transition hover:text-heading">
                 Home
               </Link>

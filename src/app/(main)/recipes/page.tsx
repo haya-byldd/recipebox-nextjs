@@ -1,9 +1,10 @@
-import RecipesPage from "@/components/recipe/recipes-page";
+import Recipes from "@/components/recipe/recipes-page";
 
-const Recipes = () => {
+const RecipesPage = () => {
   return (
-    <div className="mx-auto px-6">
-      <div className="mt-12 xs:mt-16">
+    <main className="px-6">
+      <div className="mx-auto max-w-6xl">
+    <div className="mt-12 xs:mt-16">
         <h1 className="text-2xl xs:text-3xl lg:text-4xl font-bold text-heading">
           Explore Delicious Recipes
         </h1>
@@ -13,9 +14,11 @@ const Recipes = () => {
         </p>
       </div>
 
-      <RecipesPage />
-    </div>
+      <Recipes />
+      </div>
+  
+    </main>
   );
 };
 
-export default Recipes;
+export default RecipesPage;
