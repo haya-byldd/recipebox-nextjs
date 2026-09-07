@@ -1,34 +1,32 @@
 @import "tailwindcss";
 
-@theme {
-  /* Backgrounds */
-  --color-background: #fffdf7; /* 🟨 Warm Cream */
-  --color-card: #ffffff; /* ⬜ White */
+/* @theme {
+  --color-background: #fffdf7; 
+  --color-card: #ffffff;
   --color-bg-white: #ffffff;
   --color-bg-gray50 : #F9FAFB;
   --color-gray200 : #E5E7EB;
 
-  /* Text */
-  --color-heading: #252525; /* ⬛ Dark Gray */
-  --color-text-primary: #2f2923; /* 🟫 Dark Brown */
-  --color-text-secondary: #6f6a64; /*text-gray600*/
+  --color-heading: #252525; 
+  --color-text-primary: #2f2923; 
+  --color-text-secondary: #6f6a64;
   --color-text-muted: #9a8f7e;
 
-  --color-tag-bg: #e5ebd4; /* 🟩 Sage Tag */
-  --color-tip-bg: #f2f3e9; /* 🟩 Tip Box */
+  --color-tag-bg: #e5ebd4; 
+  --color-tip-bg: #f2f3e9;
 
-  /* Accents */
-  --color-orange: #e36a01; /* 🟧 Primary Orange */
+  --color-orange: #e36a01; 
   --color-orange-hover: #F07A1A;
   --color-orange-tint: #f5d9b8;
   --color-hero-bg : #FFF7ED;
-  --color-gold: #f19300; /* 🟨 Gold Star */
-  --color-green: #5a7623; /* 🟩 Primary Green */
-  --color-green-dark: #36540d; /* 🟩 Dark Green */
+  --color-gold: #f19300;
+  --color-green: #5a7623; 
+  --color-green-dark: #36540d; 
 
   --color-border: #f6efe4;
   --color-border-input: #ece3d2;
-}
+} */
+
 @theme {
   --breakpoint-xs: 30rem; /* ~480px */
   --breakpoint-sm: 40rem; /* 640px */
@@ -37,4 +35,101 @@
   --breakpoint-lg: 64rem; /* 1024px */
   --breakpoint-xl: 80rem; /* 1280px */
   --breakpoint-2xl: 96rem; /* 1536px */
+}
+html {
+  scroll-behavior: smooth;
+}
+
+@theme {
+  /* Base / Surface Colors*/
+
+  --color-page-bg: #fffdf7;          /* Main app background */
+  --color-surface: #ffffff;          /* Cards / sections */
+  --color-surface-subtle: #f9fafb;   /* Subtle gray background */
+
+
+  /* Text Colors*/
+
+  --color-text-heading: #252525;     /* Main headings */
+  --color-text-primary: #2f2923;     /* Main content / values */
+  --color-text-secondary: #6f6a64;   /* Labels / descriptions */
+  --color-text-muted: #9a8f7e;       /* Less important text */
+ --color-text-white: #ffffff;
+
+  /*Brand / Accent Colors*/
+
+  --color-accent: #e36a01;           /* Orange accent */
+  --color-accent-hover: #f07a1a;     /* Orange hover state */
+  --color-accent-soft: #f5d9b8;      /* Soft orange background */
+  --color-accent-subtle: #fff7ed;    /* Very light orange/cream */
+
+
+  /*Positive / Fresh Colors*/
+
+  --color-success: #5a7623;          /* Green accent */
+  --color-success-dark: #36540d;     /* Dark green text */
+  --color-success-soft: #e5ebd4;     /* Light green background */
+  --color-success-subtle: #f2f3e9;   /* Very light green background */
+
+
+  /*Highlight Colors */
+  --color-highlight: #f19300;        /* Gold / star / highlight */
+ 
+  /* Borders */
+  --color-border: #f6efe4;           /* Card / section borders */
+  --color-border-input: #ece3d2;     /* Input borders */
+
+  --color-gray200: #E5E7EB;
+  --color-gray50: #F9FAFB;;
+  --color-gray100: #f3f4f6;
+  --color-gray800: #1e2939;
+  --color-gray300: #d1d5dc;
+  --color-orange600 : #ea580c;
+  
+}
+
+.dark {
+  /* Text — softened off-white instead of near-pure white */
+  --color-text-heading: #f0e6d8;
+  --color-text-primary: #e8ddd0;
+  --color-text-secondary: #b0a89d;
+  --color-text-muted: #8a8177;
+  --color-text-white: #ffffff;
+
+  /* Accent — same hue, desaturated so it doesn't glow */
+  --color-accent: #dc8a4a;
+  --color-accent-hover: #e89a5c;
+  --color-accent-soft: #3a2618;
+  --color-accent-subtle: #292019;
+
+  /* Success — muted sage instead of lime, since this is your body-copy color */
+  --color-success: #94a875;
+  --color-success-dark: #a8ba8c;
+  --color-success-soft: #262c1c;
+  --color-success-subtle: #212619;
+
+  /* Highlight */
+  --color-highlight: #dba053;
+
+  /* Borders — slightly lifted for card definition */
+  --color-border: #3d372f;
+  --color-border-input: #4a4139;
+
+  --color-gray800: #ece2d4;
+}
+
+.input-field {
+  width: 100%;
+  border-radius: 9999px;
+  border: 1px solid rgb(251 191 36 / 0.5);
+  background-color: var(--color-surface);
+  padding: 0.75rem 1rem 0.75rem 3rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  outline: none;
+}
+
+.input-field:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 2px rgb(227 106 1 / 0.5);
 }

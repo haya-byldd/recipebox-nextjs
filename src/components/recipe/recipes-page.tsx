@@ -1,9 +1,9 @@
 "use client";
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import RecipeCard from "./recipe-card";
 import { Recipe } from "../home/types";
 
-const Recipes = () => {
+const Recipes = ({query}: {query:string}) => {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
   const [currentPage, setCurrentPage] = useState(1)
   const [totalRecipes, setTotalRecipes] = useState(0)
@@ -23,18 +23,26 @@ const Recipes = () => {
   }
 
   const getRecipes = async () => {
-    const response = await fetch(`https://dummyjson.com/recipes?limit=${limit}&skip=${skip}`);
+    let baseURL = 'https://dummyjson.com/recipes';
+    if(!query){
+       baseURL = `${baseURL}?limit=${limit}&skip=${skip}`
+    }else{
+      baseURL = `${baseURL}/search?q=${query}`
+    }
+
+    const response = await fetch(baseURL);
     const data = await response.json();
     setRecipes(data.recipes);
-
     setTotalRecipes(data.total)
   };
 
   useEffect(() => {
     getRecipes();
-    console.log("inside useEffect")
-  }, [currentPage]);
-  console.log(currentPage)
+  }, [currentPage,query]);
+
+
+
+
 
   return (
   <div className="py-16 space-y-16">
@@ -44,9 +52,9 @@ const Recipes = () => {
       })}
     </div>
     <div  className="flex justify-center items-center gap-10">
-        <button className="w-25 py-2 px-4 border border-green text-green-dark rounded-lg font-semibold sm:w-35 sm:px-8 cursor-pointer disabled:cursor-not-allowed disabled:opacity-50" onClick={handlePreviousPage} disabled={currentPage === 1} >Previous</button>
-        <span className="text-green-dark font-medium text-sm">{currentPage} of {totalPages} Pages </span>
-        <button onClick={handleNextPage} className="w-25 py-2 px-4 border border-orange text-orange rounded-lg font-semibold sm:w-35 sm:px-8 cursor-pointer disabled:cursor-not-allowed disabled:opacity-50" disabled={currentPage === totalPages}>Next</button>
+        <button className="w-25 py-2 px-4 border border-success text-success-dark rounded-lg font-semibold sm:w-35 sm:px-8 cursor-pointer disabled:cursor-not-allowed disabled:opacity-50" onClick={handlePreviousPage} disabled={currentPage === 1} >Previous</button>
+        <span className="text-success-dark font-medium text-sm">{currentPage} of {totalPages} Pages </span>
+        <button onClick={handleNextPage} className="w-25 py-2 px-4 border border-accent text-accent rounded-lg font-semibold sm:w-35 sm:px-8 cursor-pointer disabled:cursor-not-allowed disabled:opacity-50" disabled={currentPage === totalPages}>Next</button>
     </div>
     </div>
   );

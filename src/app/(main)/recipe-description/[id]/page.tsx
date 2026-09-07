@@ -1,8 +1,10 @@
-const RecipeDescriptionPage = () => {
-    return(
-        <main>
+import RecipeDescription from "@/components/recipe/recipe-description";
 
-        </main>
-    )
-}
+const RecipeDescriptionPage = () => {
+  return (
+    <main>
+      <RecipeDescription />
+    </main>
+  );
+};
 export default RecipeDescriptionPage;
